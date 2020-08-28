@@ -10,6 +10,7 @@ import AddPlayer from './AddPlayer'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
 import EventPopover from './EventPopover'
+import { API_URL } from '../config'
 
 const Scheduler = (props) => {
     const calendar = React.createRef()
@@ -49,6 +50,10 @@ const Scheduler = (props) => {
               info.event.editable = true
           }
     }
+
+    const handleUnselect = () => {
+        setSelected(false)
+    }
      return (
         <div>
         <AddPlayer
@@ -63,7 +68,7 @@ const Scheduler = (props) => {
             plugins={[ resourceTimeGridPlugin, interactionPlugin ]}
             initialView={'resourceTimeGridDay'}
             resources={resources}
-            events={'http://localhost:5000/events'}
+            events={API_URL + '/events'}
             editable
             eventOverlap={false}
             selectable
@@ -73,6 +78,8 @@ const Scheduler = (props) => {
             slotMaxTime={"22:00:00"}
             eventDidMount={eventMount}
             themeSystem={'bootstrap'}
+            unselectAuto={true}
+            unselect={handleUnselect}
         />
         </div>
     )

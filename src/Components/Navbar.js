@@ -33,7 +33,10 @@ const Navbar = (props) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link className='navbar-brand' to='/'>Home</Link>
-            <div className="collapse navbar-collapse">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navigationbar">
                 <ul className="nav navbar-nav ml-auto">
                     {!isAuthenticated ? 
                     [<li className="nav-item" key="login">
