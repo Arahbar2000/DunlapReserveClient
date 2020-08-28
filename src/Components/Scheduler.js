@@ -44,6 +44,7 @@ const Scheduler = (props) => {
 
     const cancel = async => {
         calendar.current.getApi().unselect()
+        setSelected(false)
     }
 
 
@@ -54,10 +55,6 @@ const Scheduler = (props) => {
           else {
               info.event.editable = true
           }
-    }
-
-    const handleUnselect = () => {
-        setSelected(false)
     }
      return (
         <div>
