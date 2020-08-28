@@ -13,7 +13,6 @@ import EventPopover from './EventPopover'
 import { API_URL } from '../config'
 
 const Scheduler = (props) => {
-    console.log('hello')
     const calendar = React.createRef()
     const [selected, setSelected] = useState(false)
     const [selection, setSelection] = useState({})
@@ -43,6 +42,10 @@ const Scheduler = (props) => {
         calendar.current.getApi().refetchEvents()
     }
 
+    const cancel = async => {
+        calendar.current.getApi().unselect()
+    }
+
 
     const eventMount = (info) => {
           if(info.event.id != localStorage.getItem('id')) {
@@ -64,6 +67,7 @@ const Scheduler = (props) => {
             book={book}
             selected={selected}
             selection={selection}
+            cancel={cancel}
         />
         <FullCalendar
             ref={calendar}
@@ -80,8 +84,6 @@ const Scheduler = (props) => {
             slotMaxTime={"22:00:00"}
             eventDidMount={eventMount}
             themeSystem={'bootstrap'}
-            unselectAuto={true}
-            unselect={handleUnselect}
         />
         </div>
     )

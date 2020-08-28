@@ -33,7 +33,11 @@ function AddPlayer(props) {
 
     return (
         <div>
-            {!props.booked ?  props.selected ? <button onClick={props.book}>Book?</button> : null :
+            {!props.booked ?  props.selected ? 
+            <div>
+                <button onClick={props.book}>Book?</button>
+                <button onClick={props.cancel}>Cancel</button>
+            </div>: null :
             <button onClick={() => props.unbook()}>Unbook court</button>}
         </div>
     )
