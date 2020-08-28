@@ -68,6 +68,7 @@ const App = () => {
   const book = async (data) => {
     bookCourt(data)
     .then(user => {
+      console.log(user)
       if(user.booking) {
         setBooked(true)
       }
