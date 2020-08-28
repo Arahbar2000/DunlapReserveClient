@@ -53,6 +53,7 @@ const App = () => {
 
   const getUser = () => {
     getUserProfile().then(res => {
+      console.log(res)
       if(res.booking) {
         setBooked(true)
       }
