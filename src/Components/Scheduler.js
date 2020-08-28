@@ -81,7 +81,7 @@ const Scheduler = (props) => {
             slotMaxTime={"22:00:00"}
             eventDidMount={eventMount}
             themeSystem={'bootstrap'}
-            timeZon={'UTC'}
+            timeZone={'UTC'}
         />
         </div>
     )
