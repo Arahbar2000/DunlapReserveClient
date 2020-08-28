@@ -93,7 +93,7 @@ const App = () => {
 
   return (
     <main>
-      <Navbar signin={signIn} signout={signOut} />
+      <Navbar signin={signIn} signout={signOut} auth={isAuthenticated} />
       <div className="container">
         <Switch>
           <Route exact path='/' component={() => <Scheduler booked={booked} book={book} unbook={unbook}/>} />

@@ -38,7 +38,7 @@ const Navbar = (props) => {
             </button>
             <div className="collapse navbar-collapse" id="navigationbar">
                 <ul className="nav navbar-nav ml-auto">
-                    {!isAuthenticated ? 
+                    {!props.auth ? 
                     [<li className="nav-item" key="login">
                     <Link className='nav-link' to='' onClick={login} >Login</Link>
                     </li>,
