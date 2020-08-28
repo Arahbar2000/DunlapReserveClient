@@ -63,7 +63,7 @@ const App = () => {
     if(isAuthenticated) {
       getUser()
     }
-  }, [])
+  })
 
   const book = async (data) => {
     bookCourt(data)
