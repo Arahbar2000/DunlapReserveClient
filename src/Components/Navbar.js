@@ -7,14 +7,6 @@ import axios from 'axios'
 import { userInfo } from 'os'
 
 const Navbar = (props) => {
-    useEffect(() => {
-        if(localStorage.getItem('token') != null) {
-            setAuth(true)
-        }
-        else {
-            setAuth(false)
-        }
-    }, [])
     const signUp = async () => {
         await props.signin()
         signup()
