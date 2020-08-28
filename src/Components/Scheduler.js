@@ -13,6 +13,7 @@ import EventPopover from './EventPopover'
 import { API_URL } from '../config'
 
 const Scheduler = (props) => {
+    console.log('hello')
     const calendar = React.createRef()
     const [selected, setSelected] = useState(false)
     const [selection, setSelection] = useState({})
@@ -32,6 +33,7 @@ const Scheduler = (props) => {
     }
 
     const book = async () => {
+        console.log('hello')
         await props.book(selection)
         calendar.current.getApi().refetchEvents()
     }
