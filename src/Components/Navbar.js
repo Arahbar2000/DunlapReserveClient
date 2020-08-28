@@ -7,7 +7,6 @@ import axios from 'axios'
 import { userInfo } from 'os'
 
 const Navbar = (props) => {
-    const [isAuthenticated, setAuth] = useState(false)
     useEffect(() => {
         if(localStorage.getItem('token') != null) {
             setAuth(true)
@@ -27,7 +26,6 @@ const Navbar = (props) => {
 
     const signOut = async () => {
         await props.signout()
-        setAuth(false)
     }
 
     return (

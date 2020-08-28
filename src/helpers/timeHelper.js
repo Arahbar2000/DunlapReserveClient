@@ -1,29 +1,29 @@
 export const roundTime = date => {
     const newDate = new Date()
-    if (date.getUTCMinutes() <= 30 && date.getUTCMinutes() > 0) {
-        newDate.setUTCHours(date.getUTCHours(), 30, 0, 0)
+    if (date.getMinutes() <= 30 && date.getMinutes() > 0) {
+        newDate.setHours(date.getHours(), 30, 0, 0)
     }
-    else if (date.getUTCMinutes() > 30) {
-        newDate.setUTCHours(date.getUTCHours() + 1, 0, 0, 0)
+    else if (date.getMinutes() > 30) {
+        newDate.setHours(date.getHours() + 1, 0, 0, 0)
     }
     else {
-        newDate.setUTCMilliseconds(date.getUTCMilliseconds())
+        newDate.setTime(date.getTime())
     }
     return newDate
 }
 
 export const dateToInterval = date => {
     const roundedDate = roundTime(date)
-    const hours = roundedDate.getUTCHours()
-    const minutes = roundedDate.getUTCMinutes()
+    const hours = roundedDate.getHours()
+    const minutes = roundedDate.getMinutes()
     return (2 * hours) + (minutes / 30)
 
 }
 
 export const intervalToDate = interval => {
     const date = new Date()
-    date.UTCHours(Math.floor(interval/2), 0, 0, 0)
-    if(interval % 2) date.setUTCMinutes(30)
+    date.setHours(Math.floor(interval/2), 0, 0, 0)
+    if(interval % 2) date.setMinutes(30)
     return date
 }
 

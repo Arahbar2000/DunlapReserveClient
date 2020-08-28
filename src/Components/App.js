@@ -25,13 +25,13 @@ const App = () => {
     localStorage.removeItem('id')
   }
 
-  const handleLogoutSuccess = data => {
+  const handleLogoutSuccess = () => {
     setAuth(false)
     localStorage.removeItem('token')
     localStorage.removeItem('id')
   }
 
-  const handleLogoutFailure = data => {
+  const handleLogoutFailure = () => {
     setAuth(false)
     localStorage.removeItem('token')
     localStorage.removeItem('id')
