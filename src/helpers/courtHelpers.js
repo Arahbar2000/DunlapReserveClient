@@ -1,10 +1,10 @@
 import axios from 'axios'
-import { API_URL } from '../config'
+const { REACT_APP_API_URL } = process.env
 
 export const getCourtState = (court) => {
     return new Promise((resolve, reject) => {
         axios({
-            url: API_URL + '/court',
+            url: REACT_APP_API_URL + '/court',
             method: 'POST',
             headers: {'content-type': 'application/json'},
             data: {court}

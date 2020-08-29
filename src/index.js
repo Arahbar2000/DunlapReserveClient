@@ -6,7 +6,6 @@ import { Auth0Provider } from "@auth0/auth0-react"
 import './index.css';
 import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
-import { GoogleAuthProvider } from './context/googleProvider'
 ReactDOM.render(
   <BrowserRouter>
         <React.StrictMode>

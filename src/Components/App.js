@@ -5,9 +5,10 @@ import Error from './Error'
 import {Switch, Route} from 'react-router-dom'
 import Navbar from './Navbar'
 import { useGoogleLogin, useGoogleLogout } from 'react-google-login'
-import { GOOGLE_CLIENT_ID } from '../config'
 import {getUserProfile} from '../helpers/userHelpers'
 import { bookCourt, unbookCourt } from '../helpers/bookHelper'
+
+const { REACT_APP_GOOGLE_CLIENT_ID } = process.env
 
 // Root component that handles routing for all components
 const App = () => {
@@ -38,7 +39,7 @@ const App = () => {
   }
 
   const { signIn, loaded } = useGoogleLogin({
-    clientId: GOOGLE_CLIENT_ID,
+    clientId: REACT_APP_GOOGLE_CLIENT_ID,
     onSuccess: handleLoginSuccess,
     onFailure: handleLoginFailure,
     isSignedIn: true
@@ -46,7 +47,7 @@ const App = () => {
 
 
   const { signOut } = useGoogleLogout({
-    clientId: GOOGLE_CLIENT_ID,
+    clientId: REACT_APP_GOOGLE_CLIENT_ID,
     onSuccess: handleLogoutSuccess,
     onFailure: handleLogoutFailure
   })

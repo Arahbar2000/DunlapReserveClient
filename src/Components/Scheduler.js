@@ -10,7 +10,7 @@ import AddPlayer from './AddPlayer'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
 import EventPopover from './EventPopover'
-import { API_URL } from '../config'
+const { REACT_APP_API_URL } = process.env
 
 const Scheduler = (props) => {
     const calendar = React.createRef()
@@ -71,7 +71,7 @@ const Scheduler = (props) => {
             plugins={[ resourceTimeGridPlugin, interactionPlugin ]}
             initialView={'resourceTimeGridDay'}
             resources={resources}
-            events={API_URL + '/events'}
+            events={REACT_APP_API_URL + '/events'}
             editable
             eventOverlap={false}
             selectable
