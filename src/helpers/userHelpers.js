@@ -1,13 +1,16 @@
 import axios from 'axios'
+import { access } from 'fs'
 const {REACT_APP_API_URL} = process.env
-export const signup = () => {
+export const signup = access_token => {
+    console.log(access_token)
+    console.log(REACT_APP_API_URL)
     return new Promise((resolve, reject) => {
         console.log(localStorage.getItem('token'))
         axios({
             url: REACT_APP_API_URL + '/signup',
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            data: {access_token: localStorage.getItem('token')}
+            headers: { 'Content-Type': 'application/json'  },
+            data: { access_token }
         }).catch(error => {
             console.log(error.response)
             return reject(error)
@@ -16,15 +19,13 @@ export const signup = () => {
     })
 }
 
-export const getUserProfile = () => {
-    const token = localStorage.getItem('token')
-    console.log(token)
+export const getUserProfile = access_token => {
     return new Promise((resolve, reject) => {
         axios({
             url: REACT_APP_API_URL +'/userProfile',
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            data: {access_token: token}
+            headers: { 'Content-Type': 'application/json' },
+            data: { access_token }
         }).then(res => {
             return resolve(res.data.user)
         }).catch(error => {

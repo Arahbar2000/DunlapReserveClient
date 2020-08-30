@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
-import axios from 'axios'
-import { Auth0Provider } from "@auth0/auth0-react"
 import './index.css';
 import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
+import AuthProvider from './Context/AuthContext'
+import UserProvider from './Context/UserContext'
 ReactDOM.render(
   <BrowserRouter>
         <React.StrictMode>
-          <App />
+          <AuthProvider>
+            <UserProvider>
+              <App />
+            </UserProvider>
+          </AuthProvider>
         </React.StrictMode>
   </BrowserRouter>,
   document.getElementById('root')

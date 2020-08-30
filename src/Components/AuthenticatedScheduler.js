@@ -6,7 +6,7 @@ import {dateToInterval, intervalArray} from '../helpers/timeHelper'
 import AddPlayer from './AddPlayer'
 const { REACT_APP_API_URL } = process.env
 
-const Scheduler = (props) => {
+const AuthenticatedScheduler = (props) => {
     const calendar = React.createRef()
     const [selected, setSelected] = useState(false)
     const [selection, setSelection] = useState({})
@@ -80,4 +80,4 @@ const Scheduler = (props) => {
     )
 }
 
-export default Scheduler
+export default AuthenticatedScheduler

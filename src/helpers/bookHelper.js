@@ -2,8 +2,7 @@ import axios from 'axios'
 const {REACT_APP_API_URL} = process.env
 
 export const bookCourt = (data) => {
-    data.access_token = localStorage.getItem('token')
-    console.log(data)
+    console.log(data.access_token)
     return new Promise((resolve, reject) => {
         axios({
             url: REACT_APP_API_URL + '/book',
@@ -16,14 +15,13 @@ export const bookCourt = (data) => {
     })
 }
 
-export const unbookCourt = () => {
-    const access_token = localStorage.getItem('token')
+export const unbookCourt = (access_token) => {
     return new Promise((resolve, reject) => {
         axios({
             url: REACT_APP_API_URL + '/unbook',
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            data: {access_token}
+            data: { access_token }
         })
         .then(res => resolve(res.data.user))
         .catch(error => reject(error))

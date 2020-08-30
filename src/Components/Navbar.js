@@ -23,14 +23,14 @@ const Navbar = (props) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link className='navbar-brand' to='/'>Home</Link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navigationbar">
                 <ul className="nav navbar-nav ml-auto">
                     {!props.auth ? 
                     [<li className="nav-item" key="login">
-                    <Link className='nav-link' to='' onClick={login} >Login</Link>
+                    <Link className='nav-link' to='' onClick={signUp} >Login</Link>
                     </li>,
                     <li className="nav-item" key="signup">
                         <Link className='nav-link' to='' onClick={signUp}>Sign Up</Link>
