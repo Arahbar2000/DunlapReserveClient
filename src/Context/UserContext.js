@@ -23,5 +23,5 @@ const UserProvider = props => {
     return <UserContext.Provider value={{userData, updateUser}} {...props} />
 }
 
-export const useUser = () => useContext(UserContext)
-export default UserProvider
+const useUser = () => useContext(UserContext)
+export { UserProvider, useUser }

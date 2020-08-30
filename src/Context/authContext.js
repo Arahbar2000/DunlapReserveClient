@@ -42,7 +42,7 @@ const AuthProvider = props => {
     return <AuthContext.Provider value={{data, signIn, signOut}} {...props} />
 }
 
-export const useAuth = () => useContext(AuthContext)
-export default AuthProvider
+const useAuth = () => useContext(AuthContext)
+export { AuthProvider, useAuth }
 
 
