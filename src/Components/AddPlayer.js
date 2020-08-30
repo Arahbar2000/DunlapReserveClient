@@ -1,12 +1,14 @@
 import React from 'react'
 import "react-datepicker/dist/react-datepicker.css";
 import './AddPlayer.css'
+import { useUser } from '../Context/UserContext'
 
 // Form for booking or unbooking a court
 function AddPlayer(props) {
+    const { userData } = useUser()
     return (
         <div>
-            {!props.booked ?  props.selected ? 
+            {!userData.user.booking ?  props.selected ? 
             <div>
                 <button onClick={props.book}>Book?</button>
                 <button onClick={props.cancel}>Cancel</button>
