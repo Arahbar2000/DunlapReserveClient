@@ -4,8 +4,8 @@ import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
-import { AuthProvider } from './Context/AuthContext'
-import { UserProvider } from './Context/UserContext'
+import { AuthProvider } from '../../DunlapReserveServer/Context/AuthContext'
+import { UserProvider } from '../../DunlapReserveServer/Context/UserContext'
 ReactDOM.render(
   <BrowserRouter>
         <React.StrictMode>

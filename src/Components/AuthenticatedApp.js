@@ -3,8 +3,8 @@ import Error from './Error'
 import {Switch, Route} from 'react-router-dom'
 import Navbar from './Navbar'
 import { bookCourt, unbookCourt } from '../helpers/bookHelper'
-import { useUser } from '../Context/UserContext'
-import { useAuth } from '../Context/AuthContext'
+import { useUser } from '../../../DunlapReserveServer/Context/UserContext'
+import { useAuth } from '../../../DunlapReserveServer/Context/AuthContext'
 import AuthenticatedScheduler from './AuthenticatedScheduler'
 
 // Root component that handles routing for all components

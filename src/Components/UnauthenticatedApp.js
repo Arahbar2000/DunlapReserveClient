@@ -2,7 +2,7 @@ import React from 'react';
 import Error from './Error'
 import {Switch, Route} from 'react-router-dom'
 import Navbar from './Navbar'
-import { useAuth } from '../Context/AuthContext'
+import { useAuth } from '../../../DunlapReserveServer/Context/AuthContext'
 import UnauthenticatedScheduler from './UnauthenticatedScheduler'
 
 const UnauthenticatedApp = () => {

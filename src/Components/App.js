@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../Context/AuthContext'
+import { useAuth } from '../../../DunlapReserveServer/Context/AuthContext'
 // const AuthenticatedApp = React.lazy(() => import('./AuthenticatedApp'))
 // const UnauthenticatedApp = React.lazy(() => import('./UnauthenticatedApp'))
 import AuthenticatedApp from './AuthenticatedApp'
