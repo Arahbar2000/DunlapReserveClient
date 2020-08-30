@@ -8,9 +8,9 @@ const AuthContext = createContext()
 const AuthProvider = props => {
     const [data, setData] = useState({auth: false, token: null, user: null})
 
-    const handleLoginSuccess = data => {
+    const handleLoginSuccess = async data => {
         signup(data.wc.access_token)
-        .then(user => setData({ ...data, auth: true, token: data.wc.access_token, user }))
+        .then(user => {setData({ ...data, auth: true, token: data.wc.access_token, user })})
     }
 
     const handleLogoutSuccess = () => {

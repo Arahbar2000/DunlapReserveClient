@@ -17,6 +17,7 @@ const AuthenticatedApp = () => {
       info.access_token = data.token
       bookCourt(info)
       .then(user => {
+          console.log(user)
           updateUser(user)
       })
       .catch(error => console.log('error booking', error))

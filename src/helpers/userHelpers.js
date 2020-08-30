@@ -3,19 +3,18 @@ import { access } from 'fs'
 const {REACT_APP_API_URL} = process.env
 export const signup = access_token => {
     console.log(access_token)
-    console.log(REACT_APP_API_URL)
     return new Promise((resolve, reject) => {
-        console.log(localStorage.getItem('token'))
         axios({
             url: REACT_APP_API_URL + '/signup',
             method: 'POST',
             headers: { 'Content-Type': 'application/json'  },
             data: { access_token }
-        }).catch(error => {
+        })
+        .then(res => {console.log(res.data.user); return resolve(res.data.user)})
+        .catch(error => {
             console.log(error.response)
             return reject(error)
         })
-        return resolve()
     })
 }
 
@@ -27,6 +26,7 @@ export const getUserProfile = access_token => {
             headers: { 'Content-Type': 'application/json' },
             data: { access_token }
         }).then(res => {
+            console.log(res.data.user)
             return resolve(res.data.user)
         }).catch(error => {
             return reject(error)

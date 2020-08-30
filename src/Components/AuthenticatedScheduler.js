@@ -4,9 +4,11 @@ import resourceTimeGridPlugin from '@fullcalendar/resource-timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import {dateToInterval, intervalArray} from '../helpers/timeHelper'
 import AddPlayer from './AddPlayer'
+import { useUser } from '../Context/UserContext'
 const { REACT_APP_API_URL } = process.env
 
 const AuthenticatedScheduler = (props) => {
+    const { userData } = useUser()
     const calendar = React.createRef()
     const [selected, setSelected] = useState(false)
     const [selection, setSelection] = useState({})
@@ -50,15 +52,17 @@ const AuthenticatedScheduler = (props) => {
               info.event.editable = true
           }
     }
+    console.log(userData)
      return (
         <div>
+        {userData.user != null ? 
         <AddPlayer
             unbook={unbook}
             book={book}
             selected={selected}
             selection={selection}
             cancel={cancel}
-        />
+        />: null}
         <FullCalendar
             ref={calendar}
             plugins={[ resourceTimeGridPlugin, interactionPlugin ]}

@@ -10,9 +10,7 @@ ReactDOM.render(
   <BrowserRouter>
         <React.StrictMode>
           <AuthProvider>
-            <UserProvider>
-              <App />
-            </UserProvider>
+            <App />
           </AuthProvider>
         </React.StrictMode>
   </BrowserRouter>,
