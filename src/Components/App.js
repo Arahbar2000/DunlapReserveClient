@@ -8,7 +8,6 @@ import UnauthenticatedApp from './UnauthenticatedApp'
 
 const App = props => {
   const { data } = useAuth()
-  console.log(data.auth)
   return data.auth ? <UserProvider><AuthenticatedApp/></UserProvider> : <UnauthenticatedApp />
 }
 

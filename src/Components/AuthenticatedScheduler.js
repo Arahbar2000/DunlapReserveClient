@@ -28,7 +28,6 @@ const AuthenticatedScheduler = (props) => {
     }
 
     const book = async () => {
-        console.log('hello')
         await props.book(selection)
         calendar.current.getApi().refetchEvents()
     }
@@ -52,7 +51,6 @@ const AuthenticatedScheduler = (props) => {
               info.event.editable = true
           }
     }
-    console.log(userData)
      return (
         <div>
         {userData.user != null ? 

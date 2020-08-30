@@ -2,7 +2,6 @@ import axios from 'axios'
 const {REACT_APP_API_URL} = process.env
 
 export const bookCourt = (data) => {
-    console.log(data.access_token)
     return new Promise((resolve, reject) => {
         axios({
             url: REACT_APP_API_URL + '/book',
